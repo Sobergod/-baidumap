@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="./css/map.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/swiper.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=key"></script>
+    <script src="./js/swiper.js"></script>
+    <title>地图展示</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="locationContainer">
+            <p class="title">直营店查询</p>
+            <div id="selectContainer">
+                <p class="stitle">查询直营店</p>
+                <select class="mselect" name="province" id="province">
+                    <option value="">请选省份</option>
+                </select>
+                <select class="mselect" name="city" id="city">
+                    <option value="">请选城市</option>
+                </select>
+                <div class="current-location">
+                    <span class="iconfont icon-ditudangqianweizhi"></span>
+                    <span id="getCurrentLoc">使用我的当前位置</span>
+                </div>
+            </div>
+            <div id="mapContainer">
+                <div id="allmap"></div>
+            </div>
+        </div>
+        <div id="locationDetail">
+            <div class="ld-container">
+                <div class="ld-header">
+                    <div class="ld-container-left">
+                        <img src="./images/logo.png" alt="">
+                    </div>
+                    <div class="ld-container-right">
+                        <div class="ld-title">北京奥莱</div>
+                        <div class="ld-wrap">
+                            <p>昌平区南口镇陈庄村，八达岭奥莱，U130-134号店铺,</p>
+                            <span>北京</span>
+                            <span>北京市</span>
+                            <span>102200</span>
+                        </div>
+                        <div class="ld-phone">+8610 50895721</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="ld-footer">
+                    <span>专卖店详情 +</span>
+                </div>
+                <div class="ld-footer-hidden">
+                    <div class="time-list">
+                        <p>专卖店营业时间</p>
+                        <ul>
+                            <li>
+                                <span>星期日</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期一</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期二</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期三</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期四</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期五</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期六</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="in-this-market">
+                        <p>在此专卖店</p>
+                        <ul>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="ld-container">
+                <div class="ld-header">
+                    <div class="ld-container-left">
+                        <img src="./images/logo.png" alt="">
+                    </div>
+                    <div class="ld-container-right">
+                        <div class="ld-title">北京奥莱</div>
+                        <div class="ld-wrap">
+                            <p>昌平区南口镇陈庄村，八达岭奥莱，U130-134号店铺,</p>
+                            <span>北京</span>
+                            <span>北京市</span>
+                            <span>102200</span>
+                        </div>
+                        <div class="ld-phone">+8610 50895721</div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="ld-footer">
+                    <span>专卖店详情 +</span>
+                </div>
+                <div class="ld-footer-hidden">
+                    <div class="time-list">
+                        <p class="time-title">专卖店营业时间</p>
+                        <ul>
+                            <li>
+                                <span>星期日</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期一</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期二</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期三</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期四</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期五</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                            <li>
+                                <span>星期六</span>
+                                <span>10:00 am - 08:00 pm</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="in-this-market">
+                        <p>在此专卖店</p>
+                        <ul>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                            <li>
+                                <i></i>
+                                <span>女士手袋</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bestMarket">
+            <div class="bm-header">
+                <p>旗舰店</p>
+            </div>
+            <div class="bm-wrap">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/bc.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/bc.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/bc.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
+</body>
+<script>
+    var ldFooter = $('.ld-footer');
+    var ldFooterHidden = $('.ld-footer-hidden');
+    ldFooter.on('click', function () {
+        console.log($(this).children(ldFooterHidden));
+        if ($(this).next('.ld-footer-hidden').css("display") == "none") {
+
+            $(this).next('.ld-footer-hidden').fadeIn('1000');
+        } else {
+            $(this).next('.ld-footer-hidden').hide();
+        }
+    })
+</script>
+<script type="text/javascript">
+    $(function () {
+        //页面加载完毕后开始执行的事件
+        var city_json = '{"江苏":["南京","常州"],"河南":["南阳","安阳"],"安徽":["合肥"]}';
+        var city_obj = eval('(' + city_json + ')');
+        for (var key in city_obj) {
+            $("#province").append("<option value='" + key + "'>" + key + "</option>");
+        }
+        $("#province").change(function () {
+            var now_province = $(this).val();
+            $("#city").html('<option value="">请选择城市</option>');
+            for (var k in city_obj[now_province]) {
+                var now_city = city_obj[now_province][k];
+                $("#city").append('<option value="' + now_city + '">' + now_city + '</option>');
+            }
+        });
+    });
+</script>
+<script src="./js/map.js"></script>
+</html>

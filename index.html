@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" user-scalable=no content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=key"></script>
+    <title>百度地图测试</title>
+</head>
+
+<body>
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            height: 100%;
+        }
+    </style>
+    <div id="container"></div>
+    <script type="text/javascript">
+        // 创建地图
+        var map = new BMap.Map("container");
+        // 创建地图实例
+        //var point = new BMap.Point(116.331398, 39.897445);
+        // 初始化地图 设置缩放级别
+        map.centerAndZoom("长春", 12);
+        // 是否滚动缩放
+        map.enableScrollWheelZoom(true);
+        // 设置地图位置
+        // map.setCurrentCity("天津");
+        // var geolocation = new BMap.Geolocation();
+        // geolocation.getCurrentPosition(function (r) {
+        //     if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        //         var mk = new BMap.Marker(r.point);
+        //         map.addOverlay(mk);
+        //         map.panTo(r.point);
+        //         var local = new BMap.LocalSearch(map, {
+        //             renderOptions: { map: map }
+        //         });
+        //         local.search("景点");
+        //     }
+        //     else {
+        //         alert('failed' + this.getStatus());
+        //     }
+        // });
+
+    </script>
+</body>
+
+</html>
