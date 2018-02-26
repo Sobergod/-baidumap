@@ -5,6 +5,9 @@ $(document).ready(function () {
 
         var selectAddress = $('#city');
         var getCurrentLoc = $('#getCurrentLoc');
+        var dropMap = $('#dropMap');
+        var showMap = $('#showMap');
+        
         getCurrentLoc.on('click', function () {
             var geolocation = new BMap.Geolocation();
             geolocation.getCurrentPosition(function (r) {
@@ -20,10 +23,15 @@ $(document).ready(function () {
             initMap($(this).val());
             //console.log($(this));
         });
-
+        // 控件设置
+        options = {
+            type:BMAP_NAVIGATION_CONTROL_ZOOM
+        }
         // 创建地图实例
         var map = new BMap.Map("allmap", { enableMapClick: false });
         map.centerAndZoom($(selectAddress).val(), 11);
+        // 初始化地图， 设置中心点坐标和地图级别
+        map.addControl(new BMap.NavigationControl(options));   
         // 初始化地图
         function initMap(city) {
             var centerPoint = city                  // 需要下拉列表传
@@ -83,6 +91,17 @@ $(document).ready(function () {
         //         });
         //     }
         // }
+        // 开启禁用拖拽事件
+        dropMap.on('click',function(){
+            map.disableDragging();
+            $(this).hide();
+            showMap.show();
+        });
+        showMap.on('click',function() {
+            map.enableDragging();
+            $(this).hide();
+            dropMap.show();
+        })
         initMap("北京");
     })()
 })
