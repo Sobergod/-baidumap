@@ -95,14 +95,14 @@ $(document).ready(function () {
         // 禁用拖拽
         dropMap.on('click',function(){
             $('#mapContainer').css("height","200px");
-            map.disableDragging();
+            map.enableDragging();
             $(this).hide();
             showMap.show();
         });
         // 启用拖拽
         showMap.on('click',function() {
             $('#mapContainer').css("height","150px");
-            map.enableDragging();
+            map.disableDragging();
             $(this).hide();
             dropMap.show();
         })
