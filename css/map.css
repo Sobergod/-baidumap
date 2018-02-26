@@ -244,11 +244,29 @@ li {
     width: 100%;
     height: 100%;
 }
+#mapContainer {
+    position: relative;
+    overflow: hidden;
+}
 #allmap {
     width: 100%;
     height: 200px;
 }
-
+#dropMap,#showMap {
+    position: absolute;
+    bottom: 5%;
+    left:50%;
+    margin-left:-100px;
+    display: inline-block;
+    cursor: pointer;
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 17px;
+    background-color:rgba(255,255,255,.7);
+    border:2px solid #C1B497;
+}
 .anchorBL {
     display: none;
 }

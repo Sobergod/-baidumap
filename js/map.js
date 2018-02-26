@@ -92,12 +92,16 @@ $(document).ready(function () {
         //     }
         // }
         // 开启禁用拖拽事件
+        // 禁用拖拽
         dropMap.on('click',function(){
+            $('#mapContainer').css("height","200px");
             map.disableDragging();
             $(this).hide();
             showMap.show();
         });
+        // 启用拖拽
         showMap.on('click',function() {
+            $('#mapContainer').css("height","150px");
             map.enableDragging();
             $(this).hide();
             dropMap.show();
